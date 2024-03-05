@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Greenstore</title>
+  </head>
+  <body>
+    <div class="background-image">
+      <div class="background-overlay">
+        <header>
+          <div class="container">
+            <h1 class="logo">Greenstore</h1>
+            <div class="search-container">
+              <input type="text" id="searchInput" placeholder="Search..." />
+              <button id="searchBtn">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+
+            <nav class="">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="plants.html">Plants</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+              <div class="icons">
+                <a href="#" class="shopping-bag">
+                  $<span class="bag-price"> 0.00</span></a
+                >
+                <a class="shopping-bag" href=""
+                  ><i class="fas fa-shopping-bag"></i>
+                  <span class="badge">0</span></a
+                >
+
+                <a href="#" class="profile"><i class="fas fa-user"></i></a>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <div class="cart-container">
+          <div class="cart">
+            <div class="cart-header">
+              <h3>Shopping Cart</h3>
+              <button class="close-cart-btn">&times;</button>
+            </div>
+            <div class="cart-items">
+              <!-- Cart items -->
+            </div>
+            <div class="cart-footer">
+              <h4>Total: $<span class="checkout-total">0.00</span></h4>
+              <button class="checkout-btn">Checkout</button>
+            </div>
+          </div>
+        </div>
+
+        <section class="hero">
+          <div class="container">
+            <div class="hero-content">
+              <p>WELCOME TO THE GREENSTORE</p>
+              <h2>Let’s Bring the Spring to Your Home</h2>
+              <button class="btn">Shop Now</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="product-showcase">
+      <h2>New Plants</h2>
+
+      <div class="container">
+        <div class="product-grid">
+          <div class="product">
+            <img src="./images/plant1.jpg" alt="Product 1" />
+            <h3>Birdnest Japanese</h3>
+            <p>Air purifying</p>
+            <span class="price">$84.90</span>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+
+          <div class="product">
+            <img src="./images/plant2.jpg" alt="Product 2" />
+            <h3>Hoya Obovatum</h3>
+            <p>Indoor Plants</p>
+            <span class="price">$64.00</span>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="./images/plant3.jpg" alt="Product 3" />
+            <h3>Monstera Deliciosa</h3>
+            <p>Air purifying</p>
+            <span class="price">$224.90</span>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="./images/plant4.jpg" alt="Product 4" />
+            <h3>Zz Plants</h3>
+            <p>Herbs seeds</p>
+            <span class="price">$124.90</span>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="./images/plant5.jpg" alt="Product 5" />
+            <h3>Bird of Paradise</h3>
+            <p>Ceramic pots</p>
+            <span class="price">$249.90</span>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <div class="product">
+            <img src="./images/plant6.jpg" alt="Product 6" />
+            <h3>Calathea Beauty Star</h3>
+            <p>Herbs seeds</p>
+            <span class="price">$79.90</span>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <h2>What Our Customers Say</h2>
+      <div class="reviews-container">
+        <div class="review">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p>
+            "I love shopping at Plant Shop! They have a great selection of
+            plants and the customer service is excellent."
+          </p>
+          <h3>John Doe</h3>
+        </div>
+        <div class="review">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p>
+            "I'm impressed with the quality of the plants I received from Plant
+            Shop. They arrived in excellent condition and are thriving in my
+            home!"
+          </p>
+          <h3>Jane Smith</h3>
+        </div>
+        <div class="review">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p>
+            "Plant Shop has made it easy for me to find unique and beautiful
+            plants for my home. I highly recommend them to all plant lovers!"
+          </p>
+          <h3>David Johnson</h3>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <nav class="footer-nav">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Plants</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer-column">
+            <h3>Subscribe to our newsletter</h3>
+            <form action="#" class="subscribe-form">
+              <input
+                class="input-field-subscribe"
+                type="email"
+                placeholder="Your email address..."
+              />
+              <button class="subscribe" type="submit">Subscribe</button>
+            </form>
+          </div>
+          <div class="footer-column">
+            <ul class="social-icons">
+              <li>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+          <p class="copyright">© 2024 Plant Shop. Powered by Plant Shop.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="./script.js"></script>
+</html>
