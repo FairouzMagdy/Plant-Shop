@@ -13,9 +13,10 @@ let subscribedEmails = [];
 const bagPrice = document.querySelector(".bag-price");
 const badgeNumber = document.querySelector(".badge");
 const checkoutTotal = document.querySelector(".checkout-total");
+const notification = document.getElementById("notification");
 
 const searchButton = document.getElementById("searchBtn");
-const addToCartButton = document.querySelectorAll(".add-to-cart");
+const addToCartButtons = document.querySelectorAll(".add-to-cart");
 const bagButton = document.querySelector(".shopping-bag");
 const closeButton = document.querySelector(".close-cart-btn");
 
@@ -106,6 +107,17 @@ const updateCart = () => {
   badgeNumber.textContent = cartItemsCount;
 };
 
+const showNotification = () => {
+  notification.style.display = "block";
+  setTimeout(function () {
+    hideNotification();
+  }, 1500);
+};
+
+const hideNotification = () => {
+  notification.style.display = "none";
+};
+
 function searchFunction() {
   let input, filter, products, title, description;
   input = document.getElementById("searchInput");
@@ -164,12 +176,6 @@ const subscribeEmail = (e) => {
 
 // Event Listeners
 
-document.addEventListener("DOMContentLoaded", () => {
-  document
-    .getElementById("searchBtn")
-    .addEventListener("click", searchFunction);
-});
-
 // Search
 searchButton.addEventListener("click", searchFunction);
 inputSearch.addEventListener("keydown", (e) => {
@@ -182,6 +188,7 @@ inputSearch.addEventListener("keydown", (e) => {
 productsContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("add-to-cart")) {
     addToCart(e);
+    showNotification();
   }
 });
 

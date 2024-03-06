@@ -317,7 +317,7 @@ nav ul li a {
 }
 
 .product {
-  width: calc(33.33% - 20px); /* Adjusted width to account for margins */
+  width: calc(33.33% - 20px);
   margin-bottom: 40px;
   text-align: center;
   box-sizing: border-box;
@@ -365,6 +365,17 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  display: none;
 }
 
 @media screen and (max-width: 992px) {
