@@ -31,6 +31,9 @@ const cartItemsContainer = document.querySelector(".cart-items");
 const footerContent = document.querySelector(".footer-content");
 const subscribeForm = document.querySelector(".subscribe-form");
 
+const bagIcon = document.querySelector(".fa-shopping-bag");
+const dollarIcon = document.querySelector(".fa-dollar-sign");
+
 // Functions
 
 const renderProducts = () => {
@@ -92,7 +95,9 @@ const addToCart = (e) => {
     });
     cartItemsCount++;
   }
-
+  bagIcon.style.color = "#4caf50";
+  bagPrice.style.color = "#4caf50";
+  dollarIcon.style.color = "#4caf50";
   updateCart();
 };
 
