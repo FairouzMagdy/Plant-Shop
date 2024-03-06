@@ -324,13 +324,13 @@ nav ul li a {
 }
 
 .product img {
-  max-width: 85%;
+  max-width: 100%;
   height: auto;
   margin-bottom: 10px;
 }
 
 .product h3 {
-  font-size: 1.5em;
+  font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
