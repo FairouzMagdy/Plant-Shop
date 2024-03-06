@@ -1,55 +1,16 @@
-// "use strict";
+"use strict";
+
+import products from "./products.js";
+import reviews from "./reviews.js";
+
+console.log(products);
+console.log(reviews);
 
 // Global variables
 let cartItems = [];
 let totalPrice = 0;
 let cartItemsCount = 0;
 let subscribedEmails = [];
-
-const products = [
-  {
-    id: 1,
-    name: "Birdnest Japanese",
-    description: "Air purifying",
-    price: 84.9,
-    imgPath: "./images/plant1.jpg",
-  },
-  {
-    id: 2,
-    name: "Hoya Obovatum",
-    description: "Indoor Plants",
-    price: 64.0,
-    imgPath: "./images/plant2.jpg",
-  },
-  {
-    id: 3,
-    name: "Monstera Deliciosa",
-    description: "Air purifying",
-    price: 224.9,
-    imgPath: "./images/plant3.jpg",
-  },
-  {
-    id: 4,
-    name: "Zz Plants",
-    description: "Herbs seeds",
-    price: 124.9,
-    imgPath: "./images/plant4.jpg",
-  },
-  {
-    id: 5,
-    name: "Bird of Paradise",
-    description: "Ceramic pots",
-    price: 249.9,
-    imgPath: "./images/plant5.jpg",
-  },
-  {
-    id: 6,
-    name: "Calathea Beauty Star",
-    description: "Herbs seeds",
-    price: 79.9,
-    imgPath: "./images/plant6.jpg",
-  },
-];
 
 // DOM elements
 const bagPrice = document.querySelector(".bag-price");
@@ -65,6 +26,7 @@ const inputSearch = document.querySelector("#searchInput");
 const inputSubscribe = document.querySelector(".input-field-subscribe");
 
 const productsContainer = document.querySelector(".product-grid");
+const reviewsContainer = document.querySelector(".reviews-container");
 const cartContainer = document.querySelector(".cart-container");
 const cartItemsContainer = document.querySelector(".cart-items");
 const footerContent = document.querySelector(".footer-content");
@@ -87,7 +49,21 @@ const renderProducts = () => {
   });
 };
 
+const renderReviews = () => {
+  reviews.forEach((rev) => {
+    const html = `
+                <div class="review">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p>${rev.review}</p>
+                <h3>${rev.reviewer}</h3>
+            </div>
+          `;
+    reviewsContainer.insertAdjacentHTML("beforeend", html);
+  });
+};
+
 renderProducts();
+renderReviews();
 
 const addToCart = (e) => {
   const product = e.target.closest(".product");
@@ -148,7 +124,13 @@ function searchFunction() {
   });
 }
 
-// Event Handlers
+// Event Listeners
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("searchBtn")
+    .addEventListener("click", searchFunction);
+});
 
 // Search
 searchButton.addEventListener("click", searchFunction);
