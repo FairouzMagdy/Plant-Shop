@@ -3,9 +3,6 @@
 import products from "./products.js";
 import reviews from "./reviews.js";
 
-console.log(products);
-console.log(reviews);
-
 // Global variables
 let cartItems = [];
 let totalPrice = 0;
