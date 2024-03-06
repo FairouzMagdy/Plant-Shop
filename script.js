@@ -109,13 +109,13 @@ const updateCart = () => {
 function searchFunction() {
   let input, filter, products, title, description;
   input = document.getElementById("searchInput");
-  filter = input.value.toLowerCase();
+  filter = input.value.toLowerCase().replace(/\s/g, "");
   products = document.querySelectorAll(".product");
 
   products.forEach((product) => {
     title = product.getElementsByTagName("h3")[0];
     description = product.getElementsByTagName("p")[0];
-    console.log(description);
+
     if (
       title.innerText.toLowerCase().indexOf(filter) > -1 ||
       description.innerText.toLowerCase().indexOf(filter) > -1
