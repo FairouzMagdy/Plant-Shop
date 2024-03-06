@@ -121,6 +121,39 @@ function searchFunction() {
   });
 }
 
+const showCart = (e) => {
+  e.stopPropagation();
+  cartContainer.style.right = "0";
+  cartItemsContainer.innerHTML = "";
+
+  cartItems.forEach((item) => {
+    const html = `<div class="cart-item">
+                          <img class="cart-img" src=${item.img} alt="Product Image">
+                          <div class="item-details">
+                              <h3>${item.name}</h3>
+                              <p>Price: ${item.price}</p>
+                              <p>Quantity: ${item.quantity}</p>
+                          </div>
+                      </div>`;
+    cartItemsContainer.insertAdjacentHTML("beforeend", html);
+  });
+};
+
+const subscribeEmail = (e) => {
+  e.preventDefault();
+
+  const emailInput = document.querySelector(".input-field-subscribe");
+  const email = emailInput.value;
+
+  subscribedEmails.push(email);
+  subscribeForm.style.display = "none";
+  const html = `<div class="footer-column">
+                          <h3>Thanks for signing up for the newsletter! We'll be in touch soon.</h3>
+                      </div>`;
+
+  footerContent.insertAdjacentHTML("beforeend", html);
+};
+
 // Event Listeners
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -138,30 +171,14 @@ inputSearch.addEventListener("keydown", (e) => {
 });
 
 // Add to cart
-productsContainer.addEventListener("click", (event) => {
-  if (event.target.classList.contains("add-to-cart")) {
-    addToCart(event);
+productsContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("add-to-cart")) {
+    addToCart(e);
   }
 });
 
 // Show cart
-bagButton.addEventListener("click", (e) => {
-  e.stopPropagation();
-  cartContainer.style.right = "0";
-  cartItemsContainer.innerHTML = "";
-
-  cartItems.forEach((item) => {
-    const html = `<div class="cart-item">
-                        <img class="cart-img" src=${item.img} alt="Product Image">
-                        <div class="item-details">
-                            <h3>${item.name}</h3>
-                            <p>Price: ${item.price}</p>
-                            <p>Quantity: ${item.quantity}</p>
-                        </div>
-                    </div>`;
-    cartItemsContainer.insertAdjacentHTML("beforeend", html);
-  });
-});
+bagButton.addEventListener("click", showCart);
 
 // Close cart
 closeButton.addEventListener("click", function () {
@@ -176,17 +193,4 @@ document.body.addEventListener("click", (e) => {
 
 // Subscription
 
-subscribeForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const emailInput = document.querySelector(".input-field-subscribe");
-  const email = emailInput.value;
-
-  subscribedEmails.push(email);
-  subscribeForm.style.display = "none";
-  const html = `<div class="footer-column">
-                        <h3>Thanks for signing up for the newsletter! We'll be in touch soon.</h3>
-                    </div>`;
-
-  footerContent.insertAdjacentHTML("beforeend", html);
-});
+subscribeForm.addEventListener("submit", subscribeEmail);
