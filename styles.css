@@ -92,35 +92,34 @@ nav ul li a {
   text-decoration: none;
   margin-right: 10px;
   color: white;
+  position: relative; /* Ensure the shopping bag has relative positioning */
 }
 
 .shopping-bag {
-  margin-right: 15px;
+  margin-right: 10px;
 }
+
 .fa-shopping-bag {
-  padding-right: 10px;
   padding-left: 10px;
-  position: relative;
   display: inline-block;
 }
 
 .badge {
   position: absolute;
   top: -15px;
-  left: 50px;
+  right: -15px; /* Adjust badge's horizontal position */
   background-color: red;
   color: white;
   border-radius: 50%;
   padding: 5px;
   font-size: 12px;
-
   opacity: 0;
 }
 
 @media screen and (max-width: 768px) {
-  .shopping-bag .badge {
-    top: -6px;
-    right: -6px;
+  .badge {
+    top: -25px; /* Adjust badge's vertical position */
+    right: -15px; /* Adjust badge's horizontal position */
     padding: 4px;
     font-size: 10px;
   }
@@ -148,6 +147,10 @@ nav ul li a {
     padding: 4px;
     font-size: 10px;
   }
+}
+
+.profile {
+  padding-left: 10px;
 }
 
 .background-image {
