@@ -31,9 +31,9 @@ body {
   padding: 10px;
   margin-right: 10px;
   border: 2px solid rgb(92, 91, 91);
-  background-color: transparent; /* Make the background transparent */
-  color: white; /* Set text color to white */
-  width: 100%;
+  background-color: transparent;
+  color: white;
+  width: 250px;
   margin-right: 0;
 }
 
@@ -80,6 +80,7 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: white;
+  font-size: 20px;
 }
 
 .icons {
@@ -97,6 +98,8 @@ nav ul li a {
 
 .shopping-bag {
   margin-right: 10px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .fa-shopping-bag {
@@ -191,7 +194,8 @@ nav ul li a {
 }
 
 .hero-content h2 {
-  font-size: 40px;
+  font-size: 70px;
+  font-weight: lighter;
   margin-bottom: 20px;
 }
 
@@ -312,14 +316,14 @@ nav ul li a {
 }
 
 .product {
-  width: calc(33.33% - 20px);
+  width: calc(33.33%);
   margin-bottom: 40px;
   text-align: center;
   box-sizing: border-box;
 }
 
 .product img {
-  max-width: 100%;
+  max-width: 85%;
   height: auto;
   margin-bottom: 10px;
 }
@@ -370,7 +374,7 @@ button:hover {
 
 @media screen and (max-width: 768px) {
   .product {
-    width: 100%;
+    width: calc(50% - 10px);
   }
 }
 
@@ -512,5 +516,9 @@ button:hover {
 
   .social-icons {
     margin-top: 20px;
+  }
+
+  .footer-nav {
+    align-items: center;
   }
 }

@@ -14,7 +14,7 @@ const bagPrice = document.querySelector(".bag-price");
 const badgeNumber = document.querySelector(".badge");
 const checkoutTotal = document.querySelector(".checkout-total");
 
-const searchButton = document.querySelector("#searchBtn");
+const searchButton = document.getElementById("searchBtn");
 const addToCartButton = document.querySelectorAll(".add-to-cart");
 const bagButton = document.querySelector(".shopping-bag");
 const closeButton = document.querySelector(".close-cart-btn");
@@ -22,6 +22,7 @@ const closeButton = document.querySelector(".close-cart-btn");
 const inputSearch = document.querySelector("#searchInput");
 const inputSubscribe = document.querySelector(".input-field-subscribe");
 
+const productsSection = document.querySelector(".product-showcase");
 const productsContainer = document.querySelector(".product-grid");
 const reviewsContainer = document.querySelector(".reviews-container");
 const cartContainer = document.querySelector(".cart-container");
@@ -106,19 +107,26 @@ const updateCart = () => {
 };
 
 function searchFunction() {
-  let input, filter, products, product, title, i;
+  let input, filter, products, title, description;
   input = document.getElementById("searchInput");
   filter = input.value.toLowerCase();
   products = document.querySelectorAll(".product");
 
   products.forEach((product) => {
     title = product.getElementsByTagName("h3")[0];
-    if (title.innerText.toLowerCase().indexOf(filter) > -1) {
+    description = product.getElementsByTagName("p")[0];
+    console.log(description);
+    if (
+      title.innerText.toLowerCase().indexOf(filter) > -1 ||
+      description.innerText.toLowerCase().indexOf(filter) > -1
+    ) {
       product.style.display = "";
     } else {
       product.style.display = "none";
     }
   });
+
+  productsSection.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 const showCart = (e) => {
