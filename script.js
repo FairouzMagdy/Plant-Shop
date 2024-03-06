@@ -6,6 +6,51 @@ let totalPrice = 0;
 let cartItemsCount = 0;
 let subscribedEmails = [];
 
+const products = [
+  {
+    id: 1,
+    name: "Birdnest Japanese",
+    description: "Air purifying",
+    price: 84.9,
+    imgPath: "./images/plant1.jpg",
+  },
+  {
+    id: 2,
+    name: "Hoya Obovatum",
+    description: "Indoor Plants",
+    price: 64.0,
+    imgPath: "./images/plant2.jpg",
+  },
+  {
+    id: 3,
+    name: "Monstera Deliciosa",
+    description: "Air purifying",
+    price: 224.9,
+    imgPath: "./images/plant3.jpg",
+  },
+  {
+    id: 4,
+    name: "Zz Plants",
+    description: "Herbs seeds",
+    price: 124.9,
+    imgPath: "./images/plant4.jpg",
+  },
+  {
+    id: 5,
+    name: "Bird of Paradise",
+    description: "Ceramic pots",
+    price: 249.9,
+    imgPath: "./images/plant5.jpg",
+  },
+  {
+    id: 6,
+    name: "Calathea Beauty Star",
+    description: "Herbs seeds",
+    price: 79.9,
+    imgPath: "./images/plant6.jpg",
+  },
+];
+
 // DOM elements
 const bagPrice = document.querySelector(".bag-price");
 const badgeNumber = document.querySelector(".badge");
@@ -19,12 +64,30 @@ const closeButton = document.querySelector(".close-cart-btn");
 const inputSearch = document.querySelector("#searchInput");
 const inputSubscribe = document.querySelector(".input-field-subscribe");
 
+const productsContainer = document.querySelector(".product-grid");
 const cartContainer = document.querySelector(".cart-container");
 const cartItemsContainer = document.querySelector(".cart-items");
 const footerContent = document.querySelector(".footer-content");
 const subscribeForm = document.querySelector(".subscribe-form");
 
 // Functions
+
+const renderProducts = () => {
+  products.forEach((product) => {
+    const html = `
+                <div class="product">
+                    <img src=${product.imgPath} alt="Product 1" />
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <span class="price">$${product.price}</span>
+                    <button class="add-to-cart">Add to Cart</button>
+              </div>
+        `;
+    productsContainer.insertAdjacentHTML("beforeend", html);
+  });
+};
+
+renderProducts();
 
 const addToCart = (e) => {
   const product = e.target.closest(".product");
@@ -58,7 +121,6 @@ const addToCart = (e) => {
   updateCart();
 };
 
-// Function to update the cart and its related elements
 const updateCart = () => {
   let totalCartPrice = 0;
   cartItems.forEach((item) => {
@@ -97,19 +159,20 @@ inputSearch.addEventListener("keydown", (e) => {
 });
 
 // Add to cart
-addToCartButton.forEach((btn) => btn.addEventListener("click", addToCart));
+productsContainer.addEventListener("click", (event) => {
+  if (event.target.classList.contains("add-to-cart")) {
+    addToCart(event);
+  }
+});
 
 // Show cart
+bagButton.addEventListener("click", (e) => {
+  e.stopPropagation();
+  cartContainer.style.right = "0";
+  cartItemsContainer.innerHTML = "";
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Show cart when bag button is clicked
-  bagButton.addEventListener("click", (e) => {
-    e.stopPropagation();
-    cartContainer.style.right = "0";
-    cartItemsContainer.innerHTML = "";
-
-    cartItems.forEach((item) => {
-      const html = `<div class="cart-item">
+  cartItems.forEach((item) => {
+    const html = `<div class="cart-item">
                         <img class="cart-img" src=${item.img} alt="Product Image">
                         <div class="item-details">
                             <h3>${item.name}</h3>
@@ -117,21 +180,19 @@ document.addEventListener("DOMContentLoaded", function () {
                             <p>Quantity: ${item.quantity}</p>
                         </div>
                     </div>`;
-      cartItemsContainer.insertAdjacentHTML("beforeend", html);
-    });
+    cartItemsContainer.insertAdjacentHTML("beforeend", html);
   });
+});
 
-  // Hide cart when close button is clicked
-  closeButton.addEventListener("click", function () {
+// Close cart
+closeButton.addEventListener("click", function () {
+  cartContainer.style.right = "-300px";
+});
+
+document.body.addEventListener("click", (e) => {
+  if (!cartContainer.contains(e.target) && e.target !== bagButton) {
     cartContainer.style.right = "-300px";
-  });
-
-  // Hide cart when clicking anywhere else on the document
-  document.body.addEventListener("click", (e) => {
-    if (!cartContainer.contains(e.target) && e.target !== bagButton) {
-      cartContainer.style.right = "-300px";
-    }
-  });
+  }
 });
 
 // Subscription
