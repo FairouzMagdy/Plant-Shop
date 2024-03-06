@@ -317,14 +317,14 @@ nav ul li a {
 }
 
 .product {
-  width: calc(33.33% - 10px); /* Adjusted width to account for margins */
+  width: calc(33.33% - 20px); /* Adjusted width to account for margins */
   margin-bottom: 40px;
   text-align: center;
   box-sizing: border-box;
 }
 
 .product img {
-  max-width: 90%; /* Ensure images fill their containers */
+  max-width: 90%;
   height: auto;
   margin-bottom: 10px;
 }
