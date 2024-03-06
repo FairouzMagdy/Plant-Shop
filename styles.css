@@ -332,8 +332,6 @@ nav ul li a {
 .product h3 {
   font-size: 1.3rem;
   margin-bottom: 20px;
-  max-width: 200px;
-  word-wrap: break-word;
 }
 
 .product p {
@@ -389,6 +387,12 @@ button:hover {
 @media screen and (max-width: 768px) {
   .product {
     width: calc(50% - 10px);
+  }
+  .product h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    max-width: 300px;
+    word-wrap: break-word;
   }
 }
 
