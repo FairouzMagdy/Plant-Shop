@@ -38,7 +38,7 @@ body {
 }
 
 #searchInput::placeholder {
-  color: white; /* Change the placeholder color */
+  color: white; 
 }
 
 #searchInput:focus {
@@ -93,7 +93,7 @@ nav ul li a {
   text-decoration: none;
   margin-right: 10px;
   color: white;
-  position: relative; /* Ensure the shopping bag has relative positioning */
+  position: relative; 
 }
 
 .shopping-bag {
@@ -114,7 +114,7 @@ nav ul li a {
 .badge {
   position: absolute;
   top: -15px;
-  right: -15px; /* Adjust badge's horizontal position */
+  right: -15px;
   background-color: #4caf50;
   color: white;
   border-radius: 50%;
@@ -125,8 +125,8 @@ nav ul li a {
 
 @media screen and (max-width: 768px) {
   .badge {
-    top: -25px; /* Adjust badge's vertical position */
-    right: -15px; /* Adjust badge's horizontal position */
+    top: -25px; 
+    right: -15px;
     padding: 4px;
     font-size: 10px;
   }
